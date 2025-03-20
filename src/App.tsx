@@ -14,8 +14,14 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   const [thxShow, setThx] = useState(LS.getItem(LSKeys.ShowThx, false));
 
+  const click = () => {
+    window.gtag("event", "4697_more_info_var1");
+  };
+
   const submit = () => {
     setLoading(true);
+
+    click();
 
     Promise.resolve().then(() => {
       LS.setItem(LSKeys.ShowThx, true);
